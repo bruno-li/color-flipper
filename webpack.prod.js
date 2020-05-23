@@ -27,6 +27,14 @@ module.exports = merge(common, {
 					removeComments: true,
 					collapseWhitespace: true
 				}
+			}),
+			new HtmlWebpackPlugin({
+				template: './src/hex.html',
+				minify: {
+					removeAttributeQuotes: true,
+					removeComments: true,
+					collapseWhitespace: true
+				}
 			})
 		]
 	},
@@ -34,7 +42,13 @@ module.exports = merge(common, {
 		new MiniCssExtractPlugin({
 			filename: '[name].[contentHash].css'
 		}),
-		new CleanWebpackPlugin()
+		new CleanWebpackPlugin(),
+		new HtmlWebpackPlugin(), // Generates default index.html
+		new HtmlWebpackPlugin({
+			// Also generate a test.html
+			filename: 'hex.html',
+			template: './src/hex.html'
+		})
 	],
 	module: {
 		rules: [
