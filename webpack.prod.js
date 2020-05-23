@@ -42,13 +42,7 @@ module.exports = merge(common, {
 		new MiniCssExtractPlugin({
 			filename: '[name].[contentHash].css'
 		}),
-		new CleanWebpackPlugin(),
-		new HtmlWebpackPlugin(), // Generates default index.html
-		new HtmlWebpackPlugin({
-			// Also generate a test.html
-			filename: 'hex.html',
-			template: './src/hex.html'
-		})
+		new CleanWebpackPlugin()
 	],
 	module: {
 		rules: [
