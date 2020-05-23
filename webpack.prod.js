@@ -27,14 +27,6 @@ module.exports = merge(common, {
 					removeComments: true,
 					collapseWhitespace: true
 				}
-			}),
-			new HtmlWebpackPlugin({
-				template: './src/hex.html',
-				minify: {
-					removeAttributeQuotes: true,
-					removeComments: true,
-					collapseWhitespace: true
-				}
 			})
 		]
 	},
